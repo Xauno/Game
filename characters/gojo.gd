@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+signal killed()
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var max_health = 100
+@onready var health = max_health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +26,19 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func kill():
+	visible=false
+	#MAKE PLAYER DISSAPEAR OR DEATH ANIMATION WHEN KILLED
+
+func damage(amount):
+	_set_health(health-amount)
+
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health _updated", health)
+	if health == 0:
+		kill()
+		emit_signal("killed")
