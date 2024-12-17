@@ -1,17 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://xyi4nlphqfi6"]
+[gd_scene load_steps=14 format=3 uid="uid://xyi4nlphqfi6"]
 
 [ext_resource type="Script" path="res://characters/gojo.gd" id="1_b04pa"]
-[ext_resource type="Texture2D" uid="uid://w1f6vilkebtq" path="res://sprites/gojo_placeholder.png" id="2_c0ptw"]
+[ext_resource type="Texture2D" uid="uid://b0kb6dn6gtnuf" path="res://sprites/characters/gojo/crouch/gojo_12 - selection.png" id="2_78pdx"]
+[ext_resource type="Texture2D" uid="uid://dxyi8trpi6tpw" path="res://sprites/characters/gojo/crouch/gojo_13 - selection.png" id="3_65k3m"]
+[ext_resource type="Texture2D" uid="uid://cxvyafktfdods" path="res://sprites/characters/gojo/crouch/gojo_14 - selection.png" id="4_j62xh"]
+[ext_resource type="Texture2D" uid="uid://cktylgi0bw3xq" path="res://sprites/characters/gojo/crouch/gojo_15 - selection.png" id="5_a73w5"]
+[ext_resource type="Texture2D" uid="uid://scgigx7jx77d" path="res://sprites/characters/gojo/crouch/gojo_16 - selection.png" id="6_mgaqx"]
+[ext_resource type="Texture2D" uid="uid://5qs1xhpv6sf6" path="res://sprites/characters/gojo/idle/gojo_01 - selection.png" id="7_ikymq"]
+[ext_resource type="Texture2D" uid="uid://dbog3hnifd7hl" path="res://sprites/characters/gojo/idle/gojo_02 - selection.png" id="8_1ota5"]
+[ext_resource type="Texture2D" uid="uid://bt5qyu7rrxnw1" path="res://sprites/characters/gojo/idle/gojo_03 - selection.png" id="9_pvkst"]
+[ext_resource type="Texture2D" uid="uid://wr6xyydqlbpu" path="res://sprites/characters/gojo/idle/gojo_04 - selection.png" id="10_bi6em"]
+[ext_resource type="Texture2D" uid="uid://bwxfl0ps13ngf" path="res://sprites/characters/gojo/idle/gojo_05 - selection.png" id="11_tbhig"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyr67"]
-radius = 112.0
-height = 356.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al45w"]
+size = Vector2(128, 258.065)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ycayj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_c0ptw")
+"texture": ExtResource("2_78pdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_65k3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j62xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a73w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mgaqx")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ikymq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1ota5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pvkst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bi6em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tbhig")
 }],
 "loop": true,
 "name": &"Idle",
@@ -42,10 +82,13 @@ animations = [{
 script = ExtResource("1_b04pa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -31)
-shape = SubResource("CapsuleShape2D_oyr67")
+position = Vector2(2, -3)
+scale = Vector2(1, 1.24)
+shape = SubResource("RectangleShape2D_al45w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(-0.0699997, 3.3)
+scale = Vector2(0.17, 0.15)
 sprite_frames = SubResource("SpriteFrames_ycayj")
 animation = &"Idle"
+metadata/_edit_group_ = true

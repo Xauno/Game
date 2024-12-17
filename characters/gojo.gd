@@ -27,6 +27,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+# animations
+
+func _ready():
+	get_node("AnimatedSprite2D").play("Idle")
+
+
+# hitpoints functions
+
 func kill():
 	visible=false
 	#MAKE PLAYER DISSAPEAR OR DEATH ANIMATION WHEN KILLED
@@ -39,6 +47,6 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health _updated", health)
-	if health == 0:
+	if health <= 0:
 		kill()
 		emit_signal("killed")

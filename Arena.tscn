@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj4c1xsm6lg5w"]
+[gd_scene load_steps=7 format=3 uid="uid://bqx2rqkfgo56r"]
 
 [ext_resource type="PackedScene" uid="uid://cxxkihq2ibj02" path="res://characters/placeholder.tscn" id="1_g4feg"]
+[ext_resource type="Texture2D" uid="uid://dycsi55esm7kd" path="res://sprites/backgrounds/Jujustu High.jpg" id="1_xipb5"]
 [ext_resource type="Script" path="res://characters/gojo.gd" id="2_p8rs6"]
 [ext_resource type="PackedScene" uid="uid://xyi4nlphqfi6" path="res://characters/gojo.tscn" id="3_22m3g"]
 
@@ -11,6 +12,11 @@ size = Vector2(1244.5, 170)
 size = Vector2(125, 658)
 
 [node name="Arena" type="Node2D"]
+
+[node name="JujustuHigh" type="Sprite2D" parent="."]
+position = Vector2(646, 248)
+scale = Vector2(0.719271, 0.731481)
+texture = ExtResource("1_xipb5")
 
 [node name="placeholder" parent="." instance=ExtResource("1_g4feg")]
 position = Vector2(46, 480)
