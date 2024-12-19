@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqx2rqkfgo56r"]
 
-[ext_resource type="PackedScene" uid="uid://cxxkihq2ibj02" path="res://characters/placeholder.tscn" id="1_g4feg"]
+[ext_resource type="PackedScene" uid="uid://chg6k88pj5fgb" path="res://characters/placeholder.tscn" id="1_g4feg"]
 [ext_resource type="Texture2D" uid="uid://dycsi55esm7kd" path="res://sprites/backgrounds/Jujustu High.jpg" id="1_xipb5"]
 [ext_resource type="Script" path="res://characters/gojo.gd" id="2_p8rs6"]
 [ext_resource type="PackedScene" uid="uid://xyi4nlphqfi6" path="res://characters/gojo.tscn" id="3_22m3g"]

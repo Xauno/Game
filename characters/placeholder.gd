@@ -23,10 +23,17 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if velocity.x > 0:
+			get_node("AnimatedSprite2D").play("Run_Right")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+# Animations
+func _ready():
+	get_node("AnimatedSprite2D").play("Idle")
+
 
 func kill():
 	visible=false
